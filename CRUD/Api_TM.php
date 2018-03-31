@@ -46,7 +46,7 @@
  //we will create a record in the database
  case 'createuser':
  //first check the parameters required for this request are available or not
- isTheseParametersAvailable(array('name', 'email_address', 'address', 'psswd', 'maths', 'physics', 'English', 'Monday_9', 'Monday_10', 'Monday_1'));
+ isTheseParametersAvailable(array('name', 'email_address', 'address', 'psswd', 'maths', 'physics', 'English', 'Monday_9', 'Monday_10', 'Monday_11'));
 
  //creating a new dboperation object
  $db = new DbOperation();
@@ -54,17 +54,15 @@
  //creating a new record in the database
  $result = $db->createUser(
  $_POST['name'],
- $_POST['id'] = $id,
- $_POST['name'] = $name,
- $_POST['email_address'] = $email_address,
- $_POST['address'] = $address,
- $_POST['psswd'] = $psswd,
- $_POST['maths'] = $maths,
- $_POST['physics'] = $physics,
- $_POST['English'] = $English,
- $_POST['Monday_9'] = $Monday_9,
- $_POST['Monday_10'] = $Monday_10,
- $_POST['Monday_11'] = $Monday_11,
+ $_POST['email_address'],
+ $_POST['address'],
+ $_POST['psswd'],
+ $_POST['maths'],
+ $_POST['physics'],
+ $_POST['English'],
+ $_POST['Monday_9'],
+ $_POST['Monday_10'],
+ $_POST['Monday_11']
  );
 
 
@@ -101,21 +99,20 @@
 
  //the UPDATE operation
  case 'updateuser':
- isTheseParametersAvailable(array('name', 'email_address', 'address', 'psswd', 'maths', 'physics', 'English', 'Monday_9', 'Monday_10', 'Monday_1'));
+ isTheseParametersAvailable(array('name', 'email_address', 'address', 'psswd', 'maths', 'physics', 'English', 'Monday_9', 'Monday_10', 'Monday_11'));
  $db = new DbOperation();
  $result = $db->updateUser(
+   $_POST['ID'],
    $_POST['name'],
-   $_POST['id'] = $id,
-   $_POST['name'] = $name,
-   $_POST['email_address'] = $email_address,
-   $_POST['address'] = $address,
-   $_POST['psswd'] = $psswd,
-   $_POST['maths'] = $maths,
-   $_POST['physics'] = $physics,
-   $_POST['English'] = $English,
-   $_POST['Monday_9'] = $Monday_9,
-   $_POST['Monday_10'] = $Monday_10,
-   $_POST['Monday_11'] = $Monday_11,
+   $_POST['email_address'],
+   $_POST['address'],
+   $_POST['psswd'],
+   $_POST['maths'],
+   $_POST['physics'],
+   $_POST['English'],
+   $_POST['Monday_9'],
+   $_POST['Monday_10'],
+   $_POST['Monday_11']
  );
 
  if($result){
@@ -132,9 +129,9 @@
  case 'deleteuser':
 
  //for the delete operation we are getting a GET parameter from the url having the id of the record to be deleted
- if(isset($_GET['id'])){
+ if(isset($_GET['ID'])){
  $db = new DbOperation();
- if($db->deleteUser($_GET['id'])){
+ if($db->deleteUser($_GET['ID'])){
  $response['error'] = false;
  $response['message'] = 'User deleted successfully';
  $response['users'] = $db->getUsers();
@@ -144,7 +141,7 @@
  }
  }else{
  $response['error'] = true;
- $response['message'] = 'Nothing to delete, provide an id please';
+ $response['message'] = 'Nothing to delete, provide an ID please';
  }
  break;
  }
