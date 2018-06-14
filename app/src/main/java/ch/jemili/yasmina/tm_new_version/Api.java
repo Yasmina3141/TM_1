@@ -4,7 +4,7 @@
 package ch.jemili.yasmina.tm_new_version;
 
 public class Api {
-    private static final String ROOT_URL = "http://192.168.178.27/TMApi/v1/Api_TM.php?apicall=";
+    private static final String ROOT_URL = "http://84.226.173.247/TMApi/v1/Api_TM.php?apicall=";
 
     public static final String URL_CREATE_USER = ROOT_URL + "createuser";
     public static final String URL_READ_USER = ROOT_URL + "getusers";
