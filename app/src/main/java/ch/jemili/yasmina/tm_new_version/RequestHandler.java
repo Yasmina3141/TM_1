@@ -14,12 +14,10 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by Belal on 9/9/2017.
- */
+
 public class RequestHandler {
 
-    //Method to send httpPostRequest
+    //Method to send httpPostRequests
 
     public String sendPostRequest(String requestURL,
                                   HashMap<String, String> postDataParams) {

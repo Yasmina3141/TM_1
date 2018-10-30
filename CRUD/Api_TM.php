@@ -46,7 +46,7 @@
  //we will create a record in the database
  case 'createuser':
  //first check the parameters required for this request are available or not
- isTheseParametersAvailable(array('email_address', 'psswd'));
+ isTheseParametersAvailable(array('first_name', 'last_name', 'email_address', 'address', 'psswd', 'maths', 'physics', 'English', 'French', 'German', 'Spanish', 'Italian', 'Latin', 'Greek', 'sciences', 'psychology', 'philosophy', 'music', 'applied_maths', 'history', 'geography', 'economics_laws', 'biology', 'chemistry', 'Monday_9', 'Monday_10', 'Monday_11', 'Monday_12', 'Monday_13', 'Monday_14', 'Monday_15', 'Monday_16', 'Monday_17', 'Monday_18', 'Monday_19', 'Monday_20', 'Tuesday_9', 'Tuesday_10', 'Tuesday_11', 'Tuesday_12', 'Tuesday_13', 'Tuesday_14', 'Tuesday_15', 'Tuesday_16', 'Tuesday_17', 'Tuesday_18', 'Tuesday_19', 'Tuesday_20', 'Wednesday_9', 'Wednesday_10', 'Wednesday_11', 'Wednesday_12', 'Wednesday_13', 'Wednesday_14', 'Wednesday_15', 'Wednesday_16', 'Wednesday_17', 'Wednesday_18', 'Wednesday_19', 'Wednesday_20', 'Thursday_9', 'Thursday_10', 'Thursday_11', 'Thursday_12', 'Thursday_13', 'Thursday_14', 'Thursday_15', 'Thursday_16', 'Thursday_17', 'Thursday_18', 'Thursday_19', 'Thursday_20', 'Friday_9', 'Friday_10', 'Friday_11', 'Friday_12', 'Friday_13', 'Friday_14', 'Friday_15', 'Friday_16', 'Friday_17', 'Friday_18', 'Friday_19', 'Friday_20', 'Saturday_9', 'Saturday_10', 'Saturday_11', 'Saturday_12', 'Saturday_13', 'Saturday_14', 'Saturday_15', 'Saturday_16', 'Saturday_17', 'Saturday_18', 'Saturday_19', 'Saturday_20', 'Sunday_9', 'Sunday_10', 'Sunday_11', 'Sunday_12', 'Sunday_13', 'Sunday_14', 'Sunday_15', 'Sunday_16', 'Sunday_17', 'Sunday_18', 'Sunday_19', 'Sunday_20', 'level', 'status', 'price' ));
 
  //creating a new dboperation object
  $db = new DbOperation();
@@ -191,23 +191,11 @@
  //the READ operation
  //if the call is getheroes
  case 'getusers':
- isTheseParametersAvailable(array('email_address', 'psswd'));
  $db = new DbOperation();
- if($result){}
  $response['error'] = false;
  $response['message'] = 'Request successfully completed';
  $response['users'] = $db->getUsers();
-}
-else{
-  
-}
  break;
-
- // READ operation but to get one single user
- case 'getuser':
- isTheseParametersAvailable(array('email_address', 'psswd'));
-
- $db = new DbOperation();
 
 
  //the UPDATE operation
