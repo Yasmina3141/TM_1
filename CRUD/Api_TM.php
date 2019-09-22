@@ -176,7 +176,7 @@
  $response['message'] = 'User addedd successfully';
 
  //and we are getting all the heroes from the database in the response
- $response['users'] = $db->getUsers();
+ //$response['users'] = $db->getUsers();
  }else{
 
  //if record is not added that means there is an error
@@ -191,10 +191,116 @@
  //the READ operation
  //if the call is getheroes
  case 'getusers':
+ isTheseParametersAvailable(array('maths', 'physics', 'English', 'French', 'German', 'Spanish', 'Italian', 'Latin', 'Greek', 'sciences', 'psychology', 'philosophy', 'music', 'applied_maths', 'history', 'geography', 'economics_laws', 'biology', 'chemistry', 'Monday_9', 'Monday_10', 'Monday_11', 'Monday_12', 'Monday_13', 'Monday_14', 'Monday_15', 'Monday_16', 'Monday_17', 'Monday_18', 'Monday_19', 'Monday_20', 'Tuesday_9', 'Tuesday_10', 'Tuesday_11', 'Tuesday_12', 'Tuesday_13', 'Tuesday_14', 'Tuesday_15', 'Tuesday_16', 'Tuesday_17', 'Tuesday_18', 'Tuesday_19', 'Tuesday_20', 'Wednesday_9', 'Wednesday_10', 'Wednesday_11', 'Wednesday_12', 'Wednesday_13', 'Wednesday_14', 'Wednesday_15', 'Wednesday_16', 'Wednesday_17', 'Wednesday_18', 'Wednesday_19', 'Wednesday_20', 'Thursday_9', 'Thursday_10', 'Thursday_11', 'Thursday_12', 'Thursday_13', 'Thursday_14', 'Thursday_15', 'Thursday_16', 'Thursday_17', 'Thursday_18', 'Thursday_19', 'Thursday_20', 'Friday_9', 'Friday_10', 'Friday_11', 'Friday_12', 'Friday_13', 'Friday_14', 'Friday_15', 'Friday_16', 'Friday_17', 'Friday_18', 'Friday_19', 'Friday_20', 'Saturday_9', 'Saturday_10', 'Saturday_11', 'Saturday_12', 'Saturday_13', 'Saturday_14', 'Saturday_15', 'Saturday_16', 'Saturday_17', 'Saturday_18', 'Saturday_19', 'Saturday_20', 'Sunday_9', 'Sunday_10', 'Sunday_11', 'Sunday_12', 'Sunday_13', 'Sunday_14', 'Sunday_15', 'Sunday_16', 'Sunday_17', 'Sunday_18', 'Sunday_19', 'Sunday_20', 'level', 'status'));
  $db = new DbOperation();
  $response['error'] = false;
  $response['message'] = 'Request successfully completed';
- $response['users'] = $db->getUsers();
+ $response['users'] = $db->getUsers($_POST['maths'],
+ $_POST['physics'],
+ $_POST['English'],
+ $_POST['French'],
+ $_POST['German'],
+ $_POST['Spanish'],
+ $_POST['Italian'],
+ $_POST['Latin'],
+ $_POST['Greek'],
+ $_POST['sciences'],
+ $_POST['psychology'],
+ $_POST['philosophy'],
+ $_POST['music'],
+ $_POST['applied_maths'],
+ $_POST['history'],
+ $_POST['geography'],
+ $_POST['economics_laws'],
+ $_POST['biology'],
+ $_POST['chemistry'],
+ $_POST['Monday_9'],
+ $_POST['Monday_10'],
+ $_POST['Monday_11'],
+ $_POST['Monday_12'],
+ $_POST['Monday_13'],
+ $_POST['Monday_14'],
+ $_POST['Monday_15'],
+ $_POST['Monday_16'],
+ $_POST['Monday_17'],
+ $_POST['Monday_18'],
+ $_POST['Monday_19'],
+ $_POST['Monday_20'],
+ $_POST['Tuesday_9'],
+ $_POST['Tuesday_10'],
+ $_POST['Tuesday_11'],
+ $_POST['Tuesday_12'],
+ $_POST['Tuesday_13'],
+ $_POST['Tuesday_14'],
+ $_POST['Tuesday_15'],
+ $_POST['Tuesday_16'],
+ $_POST['Tuesday_17'],
+ $_POST['Tuesday_18'],
+ $_POST['Tuesday_19'],
+ $_POST['Tuesday_20'],
+ $_POST['Wednesday_9'],
+ $_POST['Wednesday_10'],
+ $_POST['Wednesday_11'],
+ $_POST['Wednesday_12'],
+ $_POST['Wednesday_13'],
+ $_POST['Wednesday_14'],
+ $_POST['Wednesday_15'],
+ $_POST['Wednesday_16'],
+ $_POST['Wednesday_17'],
+ $_POST['Wednesday_18'],
+ $_POST['Wednesday_19'],
+ $_POST['Wednesday_20'],
+ $_POST['Thursday_9'],
+ $_POST['Thursday_10'],
+ $_POST['Thursday_11'],
+ $_POST['Thursday_12'],
+ $_POST['Thursday_13'],
+ $_POST['Thursday_14'],
+ $_POST['Thursday_15'],
+ $_POST['Thursday_16'],
+ $_POST['Thursday_17'],
+ $_POST['Thursday_18'],
+ $_POST['Thursday_19'],
+ $_POST['Thursday_20'],
+ $_POST['Friday_9'],
+ $_POST['Friday_10'],
+ $_POST['Friday_11'],
+ $_POST['Friday_12'],
+ $_POST['Friday_13'],
+ $_POST['Friday_14'],
+ $_POST['Friday_15'],
+ $_POST['Friday_16'],
+ $_POST['Friday_17'],
+ $_POST['Friday_18'],
+ $_POST['Friday_19'],
+ $_POST['Friday_20'],
+ $_POST['Saturday_9'],
+ $_POST['Saturday_10'],
+ $_POST['Saturday_11'],
+ $_POST['Saturday_12'],
+ $_POST['Saturday_13'],
+ $_POST['Saturday_14'],
+ $_POST['Saturday_15'],
+ $_POST['Saturday_16'],
+ $_POST['Saturday_17'],
+ $_POST['Saturday_18'],
+ $_POST['Saturday_19'],
+ $_POST['Saturday_20'],
+ $_POST['Sunday_9'],
+ $_POST['Sunday_10'],
+ $_POST['Sunday_11'],
+ $_POST['Sunday_12'],
+ $_POST['Sunday_13'],
+ $_POST['Sunday_14'],
+ $_POST['Sunday_15'],
+ $_POST['Sunday_16'],
+ $_POST['Sunday_17'],
+ $_POST['Sunday_18'],
+ $_POST['Sunday_19'],
+ $_POST['Sunday_20'],
+ $_POST['level'],
+ $_POST['status']
+ );
  break;
 
 
@@ -320,7 +426,7 @@
  if($result){
  $response['error'] = false;
  $response['message'] = 'User updated successfully';
- $response['users'] = $db->getUsers();
+ //$response['users'] = $db->getUsers();
  }else{
  $response['error'] = true;
  $response['message'] = 'Some error occurred please try again';
